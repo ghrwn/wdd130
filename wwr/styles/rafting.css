@@ -17,11 +17,27 @@ body {
 
 /* Header Styles */
 header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 150px 1fr auto;
     align-items: center;
     background-color: var(--secondary-color);
     padding: 1rem;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
 }
 
 nav a {
@@ -29,6 +45,7 @@ nav a {
     text-decoration: none;
     margin: 0 1rem;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 /* Hero Section */
@@ -52,6 +69,8 @@ nav a {
     background: rgba(0, 0, 0, 0.5);
     padding: 1rem 2rem;
     border-radius: 10px;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 /* Main Content */
@@ -61,26 +80,42 @@ main {
     padding: 2rem;
 }
 
-article img {
-    float: right;
-    margin-left: 1rem;
-    border-radius: 10px;
-}
-
-/* Sections */
-section {
-    margin-top: 2rem;
-}
-
-h2 {
+/* History Section */
+section h2 {
     color: var(--accent1-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 1rem;
 }
 
 /* Adventure Section */
+.adventure-images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.adventure-images figure {
+    text-align: center;
+    margin: 0;
+}
+
 .adventure-images img {
-    width: 18%;
-    margin: 0.5%;
+    width: 100%;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.adventure-images figcaption {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: var(--accent2-color);
 }
 
 /* Footer */
@@ -90,11 +125,27 @@ footer {
     padding: 1rem;
 }
 
-footer nav a {
-    text-decoration: none;
+footer p {
+    font-size: 1rem;
+    color: var(--text-color);
 }
 
-.sociallinks img {
-    width: 30px;
+footer nav.sociallinks {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+footer nav.sociallinks a {
     margin: 0 10px;
+}
+
+footer nav.sociallinks img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer nav.sociallinks img:hover {
+    transform: scale(1.1);
 }
